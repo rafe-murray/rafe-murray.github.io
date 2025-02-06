@@ -2,7 +2,10 @@ import Section from "./Section";
 import { card, h3, h4, p } from "../styles";
 import CallToAction from "./CallToAction";
 
+import { useState } from "react";
+
 export default function Education(){
+    
     const content=
     <>
         <div className={card}>

@@ -8,6 +8,7 @@ import {ReactComponent as Github} from '../assets/tech/github.svg';
 import {ReactComponent as GithubWhite} from '../assets/tech/github-white.svg';
 import {ReactComponent as Gitlab} from '../assets/tech/gitlab.svg';
 import {ReactComponent as Html} from '../assets/tech/html.svg';
+import {ReactComponent as Java} from '../assets/tech/java.svg';
 import {ReactComponent as Js} from '../assets/tech/js.svg';
 import {ReactComponent as Matlab} from '../assets/tech/matlab.svg';
 import {ReactComponent as Mysql} from '../assets/tech/mysql.svg';
@@ -23,6 +24,7 @@ export const skills = [
     {title: "PostgreSQL", Icon: Postgresql},
     {title: "PHP", Icon: Php},
     {title: "Bash", Icon: Bash},
+    {title: "Java", Icon: Java},
     {title: "C", Icon: C},
     {title: "C++", Icon: Cpp},
     {title: "Git", Icon: Git},
@@ -44,6 +46,7 @@ skills.forEach(skill => {
 export {skillsList}
 
 export const projects = [
+    {header: "Image processing", content: "Implemented a variety of image processing methods on an abstract data type in Java", skills:["Java"]},
     {header: "Scrapers", content: "Reimplemented Django Python scrapers of Canadian elected officials’ information on 75 websites and stored it in a database for later use by a petition service", skills: ["Python", "PostgreSQL"], github:"https://github.com/search?q=org%3Aopencivicdata+is%3Apr+author%3Arafe-murray+is%3Amerged&type=pullrequests"},
     {header: "Candidate Dashboard", content: "Developed displays of candidate information in PHP for an online educational certification system for the Construction Industry Licensing Board of Florida", skills: ["JavaScript", "PHP", "MySQL", "HTML","Angular"]},
     {header: "Waitlist Functionality", content: "Created functionality using a low code framework and PHP to manage counselling waitlists and scheduling appointments for the Sexual Assault Centre of Edmonton", skills: ["PHP","MySQL"]},
@@ -117,7 +120,7 @@ export const courses = [
         {code: "CHC 2DF", title: "Canadian History Since World War I", mark: "96%"},
         {code: "SNC 2D1", title: "Science", mark: "97%"},
         {code: "AMV 2O1", title: "Music - Vocal/Choral", mark: "95%"},
-        {code: "FEF 2D1", title: "Extended French- 98%"},
+        {code: "FEF 2D1", title: "Extended French", mark: "98%"},
         {code: "HRE 2O1", title: "Religious Education", mark: "93%"},
         {code: "CHV 2OF", title: "Civics and Citizenship", mark: "98%"},
         {code: "ENG 2D1", title: "English", mark: "96%"},

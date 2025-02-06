@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export default function Navbar(){
     const [menuOpen, setMenuOpen] = useState(false);
@@ -12,19 +13,19 @@ export default function Navbar(){
         window.scrollTo(0,0);
     }
     const items = [
-        "Skills",
-        "Work Experience",
-        "Education",
-        "Projects",
+        { title: "Skills", hash: "skills" },
+        { title: "Work Experience", hash: "work" },
+        { title: "Education", hash: "education" },
+        { title: "Projects", hash: "projects" },
     ];
     const navbarItems = items.map(item =>
         <li className="p-4">
-            <a href={"#"+item} className="hover:text-cyan-500">{item}</a>
+            <HashLink to={"/#"+item.hash} className="hover:text-cyan-500">{item.title}</HashLink>
         </li>
     );
     const mobileNavItems = items.map(item =>
         <li className="p-2 m-2 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-md">
-            <a className="inline-block w-full" href={"#"+item} onClick={handleMenuClick}>{item}</a>
+            <a className="inline-block w-full" href={"#"+item.hash} onClick={handleMenuClick}>{item.title}</a>
         </li>
     );
     return(
