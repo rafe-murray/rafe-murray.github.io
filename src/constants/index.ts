@@ -4,8 +4,8 @@ import {ReactComponent as C} from '../assets/tech/c.svg';
 import {ReactComponent as Cpp} from '../assets/tech/cpp.svg';
 import {ReactComponent as Css} from '../assets/tech/css.svg';
 import {ReactComponent as Git} from '../assets/tech/git.svg';
-import {ReactComponent as Github} from '../assets/tech/github.svg';
-import {ReactComponent as GithubWhite} from '../assets/tech/github-white.svg';
+// import {ReactComponent as Github} from '../assets/tech/github.svg';
+// import {ReactComponent as GithubWhite} from '../assets/tech/github-white.svg';
 import {ReactComponent as Gitlab} from '../assets/tech/gitlab.svg';
 import {ReactComponent as Html} from '../assets/tech/html.svg';
 import {ReactComponent as Java} from '../assets/tech/java.svg';
@@ -17,33 +17,37 @@ import {ReactComponent as Postgresql} from '../assets/tech/postgresql.svg';
 import {ReactComponent as Python} from '../assets/tech/python.svg';
 import {ReactComponent as React} from '../assets/tech/react.svg';
 import {ReactComponent as Tailwind} from '../assets/tech/tailwind.svg';
+import { Skill, SkillKey } from '../types';
 
-export const skills = [
-    {title: "Python", Icon: Python},
-    {title: "MySQL", Icon: Mysql},
-    {title: "PostgreSQL", Icon: Postgresql},
-    {title: "PHP", Icon: Php},
-    {title: "Bash", Icon: Bash},
-    {title: "Java", Icon: Java},
-    {title: "C", Icon: C},
-    {title: "C++", Icon: Cpp},
-    {title: "Git", Icon: Git},
-    {title: "GitHub", Icon: Github, dark: GithubWhite},
-    {title: "GitLab", Icon: Gitlab},
-    {title: "HTML", Icon: Html},
-    {title: "CSS", Icon: Css},
-    {title: "Tailwind CSS", Icon: Tailwind},
-    {title: "JavaScript", Icon: Js},
-    {title: "React", Icon: React},
-    {title: "Angular", Icon: Angular},
-    {title: "MatLab", Icon: Matlab},   
-];
+// TODO: renamve to skillsMap
+export const skillsMap = new Map<SkillKey, Skill>([
 
-const skillsList = {};
-skills.forEach(skill => {
-    skillsList[skill.title] = skill
-})
-export {skillsList}
+    ["Python", {title: "Python", icon: Python}],
+    [ "MySQL", {title: "MySQL", icon: Mysql}],
+    [ "PostgreSQL", {title: "PostgreSQL", icon: Postgresql}],
+    [ "PHP", {title: "PHP", icon: Php}],
+    [ "Bash", {title: "Bash", icon: Bash}],
+    [ "Java", {title: "Java", icon: Java}],
+    [ "C", {title: "C", icon: C}],
+    [ "C++", {title: "C++", icon: Cpp}],
+    [ "Git", {title: "Git", icon: Git}],
+    // {title: "GitHub", icon: Github, dark: GithubWhite},
+    [ "GitLab", {title: "GitLab", icon: Gitlab}],
+    [ "HTML", {title: "HTML", icon: Html}],
+    [ "CSS", {title: "CSS", icon: Css}],
+    [ "Tailwind CSS", {title: "Tailwind CSS", icon: Tailwind}],
+    [ "JavaScript", {title: "JavaScript", icon: Js}],
+    [ "React", {title: "React", icon: React}],
+    [ "Angular", {title: "Angular", icon: Angular}],
+    [ "MatLab", {title: "MatLab", icon: Matlab},  ] 
+]);
+
+// type Test = keyof SkillMap;
+// const skillsList: SkillMap = {}
+// skills.forEach(skill => {
+//     skillsList[skill.title] = skill
+// })
+// export {skillsList}
 
 export const projects = [
     {header: "Image processing", content: "Implemented a variety of image processing methods on an abstract data type in Java", skills:["Java"]},
