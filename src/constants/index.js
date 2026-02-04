@@ -22,6 +22,7 @@ import { ReactComponent as Ts } from "../assets/tech/ts.svg";
 import { ReactComponent as MongoDB } from "../assets/tech/mongodb.svg";
 import { ReactComponent as Docker } from "../assets/tech/docker.svg";
 import { ReactComponent as CMake } from "../assets/tech/cmake.svg";
+import { ReactComponent as ProtoBuf } from "../assets/tech/protobuf.svg";
 
 export const skills = [
   { title: "Python", Icon: Python },
@@ -47,6 +48,7 @@ export const skills = [
   { title: "MatLab", Icon: Matlab },
   { title: "Docker", Icon: Docker },
   { title: "CMake", Icon: CMake },
+  { title: "ProtoBuf", Icon: ProtoBuf },
 ];
 
 const skillsList = {};
@@ -377,4 +379,3 @@ export const courses = [
     ],
   },
 ];
-
