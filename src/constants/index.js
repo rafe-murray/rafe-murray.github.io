@@ -23,6 +23,7 @@ import { ReactComponent as MongoDB } from "../assets/tech/mongodb.svg";
 import { ReactComponent as Docker } from "../assets/tech/docker.svg";
 import { ReactComponent as CMake } from "../assets/tech/cmake.svg";
 import { ReactComponent as ProtoBuf } from "../assets/tech/protobuf.svg";
+import { a } from "../styles";
 
 export const skills = [
   { title: "Python", Icon: Python },
@@ -60,15 +61,44 @@ export { skillsList };
 export const projects = [
   {
     header: "Circuit Solver",
-    content:
-      'I wrote a C++ library that solves circuits for their currents and voltages. It takes a circuit serialized using a <a href="https://protobuf.dev/">Protocol Buffer</a>, then converts it into an internal graph representation using an adjacency list. Next, I used <a href="https://en.wikipedia.org/wiki/Modified_nodal_analysis">Modified Nodal Analysis</a> to create a system of equations for the voltages. Finally, I constructed and solved a least squares problem from this set of equations using an external library for the optimization step. Once the circuit is solved, it is returned to the caller in the same Protocol Buffer format.',
+    content: [
+      "I wrote a C++ library that solves circuits for their currents and voltages. It takes a circuit serialized using a ",
+      <a
+        className={a}
+        href="https://protobuf.dev/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Protocol Buffer
+      </a>,
+      ", then converts it into an internal graph representation using an adjacency list. Next, I used ",
+      <a
+        className={a}
+        href="https://en.wikipedia.org/wiki/Modified_nodal_analysis"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Modified Nodal Analysis
+      </a>,
+      " to create a system of equations for the voltages. Finally, I constructed and solved a least squares problem from this set of equations using an external library for the optimization step. Once the circuit is solved, it is returned to the caller in the same Protocol Buffer format.",
+    ],
     skills: ["C++", "CMake", "ProtoBuf"],
     github: "https://github.com/rafe-murray/circuitSolver",
   },
   {
     header: "Aerospace Jumplist",
-    content:
-      'Created a small python script to create and manage a vim-style jumplist for <a href="https://github.com/nikitabobko/AeroSpace">Aerospace</a>, a tiling window manager for macOS. It allows users to go backwards and forwards through their history of workspaces by storing a history stack in the filesystem. I decided to do it this way so that the program would not need to be continuously active and could instead be run occasionally leaving state behind.',
+    content: [
+      "Created a small python script to create and manage a vim-style jumplist for ",
+      <a
+        className={a}
+        href="https://github.com/nikitabobko/AeroSpace"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Aerospace
+      </a>,
+      ", a tiling window manager for macOS. It allows users to go backwards and forwards through their history of workspaces by storing a history stack in the filesystem. I decided to do it this way so that the program would not need to be continuously active and could instead be run occasionally leaving state behind.",
+    ],
     skills: ["Python"],
     github: "https://github.com/rafe-murray/aerospace-jumplist",
   },

@@ -4,18 +4,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        black: '#0f1113',
+        black: "#0f1113",
         dark: {
-          950: '#181a1f',
-          800: '#23272f',
-        }
+          950: "#181a1f",
+          800: "#23272f",
+        },
       },
       fontFamily: {
         heading: ['"Maven Pro"', "sans-serif"],
       },
-    }
+    },
   },
-  plugins: [],
-  darkMode: 'selector',
-}
-
+  plugins: [require("@tailwindcss/typography")],
+  darkMode: "selector",
+};

@@ -58,4 +58,3 @@ export default function Projects() {
   ));
   return <Section header="Projects" content={content} />;
 }
-
