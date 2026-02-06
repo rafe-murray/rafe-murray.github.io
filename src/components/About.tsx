@@ -24,18 +24,18 @@ export default function About() {
               target="_blank"
               title="See my projects on Github"
               href="https://github.com/rafe-murray"
-              icon="fa-brands fa-github"
+              icon="github"
             />
             <Button
               target="_blank"
               title="View my profile on Linkedin"
               href="https://www.linkedin.com/in/rafe-murray"
-              icon="fa-brands fa-linkedin"
+              icon="linkedin"
             />
             <Button
               title="Email me"
               href="mailto:rafemurr@gmail.com"
-              icon="fa-regular fa-envelope"
+              icon="envelope"   
             />
           </div>
         </div>
