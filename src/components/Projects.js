@@ -1,12 +1,12 @@
-import Section from './Section';
-import Skill from './Skill';
-import { projects } from '../constants';
-import { card, h4, p } from '../styles';
-import { skillsMap } from '../constants';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Section from "./Section";
+import Skill from "./Skill";
+import { projects } from "../constants";
+import { card, h4, p } from "../styles";
+import { skillsList } from "../constants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Projects() {
-  const content = projects.map(project => (
+  const content = projects.map((project) => (
     <div className={card}>
       <h4 className={h4}>
         {project.header}
@@ -14,6 +14,7 @@ export default function Projects() {
           <a
             href={project.github}
             target="_blank"
+            rel="noreferrer"
             title="View GitHub repo"
             className="pl-6 text-2xl"
           >
@@ -23,21 +24,21 @@ export default function Projects() {
             />
           </a>
         ) : (
-          ''
+          ""
         )}
       </h4>
-      <p className={p + ' pb-16'}>{project.content}</p>
+      <p className={p + " pb-16"}>{project.content}</p>
       <div className="flex flex-row flex-wrap gap-6">
-        {project.skills.map(skill => {
-          const skillObj = skillsMap[skill];
+        {project.skills.map((skill) => {
+          const skillObj = skillsList[skill];
           return (
             <>
               <Skill
                 title={skillObj.title}
                 Icon={skillObj.Icon}
                 className={
-                  (skillObj.dark ? 'flex dark:hidden ' : '') +
-                  'size-14 aspect-square'
+                  (skillObj.dark ? "flex dark:hidden " : "") +
+                  "size-14 aspect-square"
                 }
               />
               {skillObj.dark ? (
@@ -47,7 +48,7 @@ export default function Projects() {
                   className="hidden dark:flex size-14 aspect-square"
                 />
               ) : (
-                ''
+                ""
               )}
             </>
           );
@@ -57,4 +58,3 @@ export default function Projects() {
   ));
   return <Section header="Projects" content={content} />;
 }
-

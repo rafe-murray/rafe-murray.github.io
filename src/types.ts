@@ -1,4 +1,4 @@
-import type React = require("react");
+import type React = require('react');
 
 export type SVG = React.FunctionComponent<
   React.SVGProps<SVGSVGElement> & {
@@ -7,24 +7,30 @@ export type SVG = React.FunctionComponent<
 >;
 
 export type SkillKey =
-  | "Python"
-  | "MySQL"
-  | "PostgreSQL"
-  | "PHP"
-  | "Bash"
-  | "Java"
-  | "C"
-  | "C++"
-  | "Git"
-  | "GitHub"
-  | "GitLab"
-  | "HTML"
-  | "CSS"
-  | "Tailwind CSS"
-  | "JavaScript"
-  | "React"
-  | "Angular"
-  | "MatLab";
+  | 'Python'
+  | 'MySQL'
+  | 'PostgreSQL'
+  | 'PHP'
+  | 'Bash'
+  | 'Java'
+  | 'C'
+  | 'C++'
+  | 'Git'
+  | 'GitHub'
+  | 'GitLab'
+  | 'HTML'
+  | 'CSS'
+  | 'Tailwind CSS'
+  | 'JavaScript'
+  | 'React'
+  | 'Angular'
+  | 'MatLab'
+  | 'Kotlin'
+  | 'TypeScript'
+  | 'MongoDB'
+  | 'Docker'
+  | 'CMake'
+  | 'ProtoBuf';
 
 export interface Skill {
   title: SkillKey;
@@ -33,20 +39,21 @@ export interface Skill {
 
 export interface Project {
   header: string;
-  content: string;
-  skills: Array<SkillKey>;
+  content: string | React.ReactNode[];
+  skills: SkillKey[];
+  github?: string;
 }
 
 export interface Job {
   startDate: Date;
   endDate: Date;
   role: string;
-  achievements: Array<string>;
+  achievements: string[];
 }
 
 export interface Workplace {
   employer: string;
-  jobs: Array<Job>;
+  jobs: Job[];
 }
 
 export interface Course {
