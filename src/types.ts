@@ -35,6 +35,7 @@ export type SkillKey =
 export interface Skill {
   title: SkillKey;
   icon: SVG;
+  darkIcon?: SVG;
 }
 
 export interface Project {
@@ -65,4 +66,9 @@ export interface Course {
 export interface CourseLoad {
   year: string;
   courses: Array<Course>;
+}
+
+export interface NavBarItem {
+  title: string;
+  hash: string;
 }

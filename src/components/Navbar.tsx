@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ThemeSwitcher from './ThemeSwitcher';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { NavBarItem } from '../types';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ export default function Navbar() {
   function handleHomeClick() {
     window.scrollTo(0, 0);
   }
-  const items = [
+  const items: NavBarItem[] = [
     { title: 'Skills', hash: 'skills' },
     { title: 'Work Experience', hash: 'work' },
     { title: 'Education', hash: 'education' },

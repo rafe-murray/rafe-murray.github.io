@@ -39,7 +39,7 @@ export default function Courses() {
     <>
       <div className="max-w-7xl items-top mx-auto place-content-center px-4 pt-24">
         <Link
-          to={-1}
+          to=".."
           className="py-4 pr-6 pl-2 hover:bg-gray-100 dark:hover:bg-dark-800 rounded-md text-zinc-800 dark:text-gray-50"
         >
           <FontAwesomeIcon icon="chevron-left" />

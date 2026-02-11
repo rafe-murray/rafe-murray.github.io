@@ -4,8 +4,8 @@ import { ReactComponent as C } from '../assets/tech/c.svg';
 import { ReactComponent as Cpp } from '../assets/tech/cpp.svg';
 import { ReactComponent as Css } from '../assets/tech/css.svg';
 import { ReactComponent as Git } from '../assets/tech/git.svg';
-// import {ReactComponent as Github} from '../assets/tech/github.svg';
-// import {ReactComponent as GithubWhite} from '../assets/tech/github-white.svg';
+import {ReactComponent as Github} from '../assets/tech/github.svg';
+import {ReactComponent as GithubWhite} from '../assets/tech/github-white.svg';
 import { ReactComponent as Gitlab } from '../assets/tech/gitlab.svg';
 import { ReactComponent as Html } from '../assets/tech/html.svg';
 import { ReactComponent as Java } from '../assets/tech/java.svg';
@@ -37,6 +37,7 @@ export const skillsMap = new Map<SkillKey, Skill>([
   ['C', { title: 'C', icon: C }],
   ['C++', { title: 'C++', icon: Cpp }],
   ['Git', { title: 'Git', icon: Git }],
+  ['GitHub', {title: "GitHub", icon: Github, darkIcon: GithubWhite}],
   // {title: "GitHub", icon: Github, dark: GithubWhite},
   ['GitLab', { title: 'GitLab', icon: Gitlab }],
   ['HTML', { title: 'HTML', icon: Html }],
@@ -233,8 +234,8 @@ export const work: Workplace[] = [
     employer: 'JMA Consulting',
     jobs: [
       {
-        startDate: new Date('May 2025'),
-        endDate: new Date('August 2025'),
+        startDate: new Date(2025,4),
+        endDate: new Date(2025,7),
         role: 'Junior Software Developer',
         achievements: [
           ' Created custom forms to meet client needs, allowing an industry certification board to quickly register users for exams, a white-label SAAS to update business information, and another client to import data.',
@@ -245,8 +246,8 @@ export const work: Workplace[] = [
         ],
       },
       {
-        startDate: new Date('May 2024'),
-        endDate: new Date('August 2024'),
+        startDate: new Date(2024, 4),
+        endDate: new Date(2024,7),
         role: 'Junior Software Developer',
         achievements: [
           'Reimplemented Django Python scrapers of Canadian elected officials’ information on 75 websites and stored it in a database for later use by a petition service',
@@ -257,8 +258,8 @@ export const work: Workplace[] = [
         ],
       },
       {
-        startDate: new Date('July 2023'),
-        endDate: new Date('August 2023'),
+        startDate: new Date(2023, 6),
+        endDate: new Date(2023, 7),
         role: 'Junior Software Developer',
         achievements: [
           'Developed a client management application for a software company specializing in building websites and constituent relationship management systems for nonprofits',

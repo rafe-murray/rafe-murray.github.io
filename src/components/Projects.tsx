@@ -2,7 +2,7 @@ import Section from "./Section";
 import Skill from "./Skill";
 import { projects } from "../constants";
 import { card, h4, p } from "../styles";
-import { skillsList } from "../constants";
+import { skillsMap } from "../constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Projects() {
@@ -30,21 +30,21 @@ export default function Projects() {
       <p className={p + " pb-16"}>{project.content}</p>
       <div className="flex flex-row flex-wrap gap-6">
         {project.skills.map((skill) => {
-          const skillObj = skillsList[skill];
+          const skillObj = skillsMap.get(skill)!;
           return (
             <>
               <Skill
                 title={skillObj.title}
-                Icon={skillObj.Icon}
+                Icon={skillObj.icon}
                 className={
-                  (skillObj.dark ? "flex dark:hidden " : "") +
+                  (skillObj.darkIcon ? "flex dark:hidden " : "") +
                   "size-14 aspect-square"
                 }
               />
-              {skillObj.dark ? (
+              {skillObj.darkIcon ? (
                 <Skill
                   title={skillObj.title}
-                  Icon={skillObj.dark}
+                  Icon={skillObj.darkIcon}
                   className="hidden dark:flex size-14 aspect-square"
                 />
               ) : (
