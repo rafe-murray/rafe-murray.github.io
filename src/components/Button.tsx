@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
-export default function Button({ title, href, icon, target }: { title: string, href: string, icon: IconProp, target?: string }) {
+export default function Button({ title, href, icon, target }: { title: string, href: string, icon: IconDefinition, target?: string }) {
   return (
     <a target={target} href={href} title={title} className="inline-block p-2">
       <FontAwesomeIcon

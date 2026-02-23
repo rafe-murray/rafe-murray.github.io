@@ -28,6 +28,7 @@ export default function Education() {
         <div className="pb-10">
           <div className="flex flex-col sm:flex-row justify-between">
             <h4 className={h4}>High School Diploma</h4>
+            {/* TODO: Switch this whole file to be content vs display */}
             <h4 className={h4}>September 2019 – June 2023</h4>
           </div>
           <p className={p}>
