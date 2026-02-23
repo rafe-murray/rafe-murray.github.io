@@ -1,37 +1,16 @@
-import { courses } from '../constants';
-import { card } from '../styles';
+import { courseLoads } from '../constants';
 import Section from '../components/Section';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { p } from '../styles';
 import { useCustomScroll } from '../useCustomScroll';
+import CourseLoadElement from '../components/CourseLoad';
 
 export default function Courses() {
   useCustomScroll();
-  const courseCards = courses.map(object => (
-    <div className={card}>
-      <h3 className="text-3xl font-semibold text-zinc-800 dark:text-gray-50 pb-8">
-        {object.year}
-      </h3>
-      <table className="w-full">
-        <tbody>
-          {object.courses.map(course => (
-            <tr className="border-b-2 dark:border-gray-500">
-              <td className={p + ' pr-10 py-2 font-mono whitespace-nowrap'}>
-                {course.code}
-              </td>
-              <td className={p + ' py-2'}>{course.title}</td>
-              <td className={p + ' w-[15%] py-2'}>{course.mark}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  ));
   const content = (
     <>
       <div className="grid sm:grid-cols-2 sm:gap-x-5 grid-cols-1">
-        {courseCards}
+        {courseLoads.map(courseLoad => <CourseLoadElement courseLoad={courseLoad}/>)}
       </div>
     </>
   );

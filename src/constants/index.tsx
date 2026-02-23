@@ -23,7 +23,7 @@ import { ReactComponent as MongoDB } from '../assets/tech/mongodb.svg';
 import { ReactComponent as Docker } from '../assets/tech/docker.svg';
 import { ReactComponent as CMake } from '../assets/tech/cmake.svg';
 import { ReactComponent as ProtoBuf } from '../assets/tech/protobuf.svg';
-import { Project, Skill, SkillKey, Workplace } from '../types';
+import { CourseLoad, Project, Skill, SkillKey, Workplace } from '../types';
 import { a } from '../styles';
 
 // TODO: renamve to skillsMap
@@ -272,77 +272,78 @@ export const work: Workplace[] = [
   },
 ];
 
-export const courses = [
+export const courseLoads: CourseLoad[] = [
   {
     year: 'Second year',
     courses: [
-      { code: 'MATH 253', title: 'Multivariable Calculus', mark: 'N/A' },
-      { code: 'CPEN 281', title: 'Technical Communication', mark: 'N/A' },
-      { code: 'CPEN 221', title: 'Software Construction I (A)', mark: 'N/A' },
-      { code: 'CPEN 211', title: 'Computing Systems I', mark: 'N/A' },
-      { code: 'MATH 220', title: 'Mathematical Proof', mark: 'N/A' },
-      { code: 'ELEC 201', title: 'Circuit Analysis I', mark: 'N/A' },
-      { code: 'MATH 256', title: 'Differential Equations', mark: 'N/A' },
+      { code: "MATH 253", title: "Multivariable Calculus", percentageGrade: 94 },
+      { code: "CPEN 281", title: "Technical Communication", percentageGrade: 81 },
+      { code: "CPEN 221", title: "Software Construction I (A)", percentageGrade: 88 },
+      { code: "CPEN 211", title: "Computing Systems I", percentageGrade: 94 },
+      { code: "MATH 220", title: "Mathematical Proof", percentageGrade: 92 },
+      { code: "ELEC 201", title: "Circuit Analysis I", percentageGrade: 85 },
+      { code: "MATH 256", title: "Differential Equations", percentageGrade: 98 },
       {
-        code: 'CPSC 221',
-        title: 'Basic Algorithms and Data Structures',
-        mark: 'N/A',
+        code: "CPSC 221",
+        title: "Basic Algorithms and Data Structures",
+        percentageGrade: 97,
       },
-      { code: 'CPEN 212', title: 'Computing Systems II', mark: 'N/A' },
       {
-        code: 'KIN\u2002 150' /** en-space to preserve alignment of second column of text */,
-        title: 'Sport and Exercise Psychology',
-        mark: 'N/A',
+        code: "PSYC 102",
+        title:
+          "Introduction to Developmental, Social, Personality, and Clinical Psychology",
+        percentageGrade: 72,
       },
+      { code: "CPEN 212", title: "Computing Systems II", percentageGrade: 72 },
     ],
   },
   {
     year: 'First year',
     courses: [
-      { code: 'APSC 100', title: 'Introduction to Engineering I', mark: '85%' },
+      { code: 'APSC 100', title: 'Introduction to Engineering I', percentageGrade: 85 },
       {
         code: 'APSC 101',
         title: 'Introduction to Engineering II',
-        mark: '82%',
+        percentageGrade: 82,
       },
       {
         code: 'APSC 160',
         title: 'Introduction to Computation in Engineering Design',
-        mark: '98%',
+        percentageGrade: 98,
       },
-      { code: 'CHEM 154', title: 'Chemistry for Engineering', mark: '87%' },
-      { code: 'GERN 101', title: 'Learning German 1', mark: '94%' },
+      { code: 'CHEM 154', title: 'Chemistry for Engineering', percentageGrade: 87 },
+      { code: 'GERN 101', title: 'Learning German 1', percentageGrade: 94 },
       {
         code: 'MATH 100',
         title: 'Differential Calculus with Applications',
-        mark: '93%',
+        percentageGrade: 93,
       },
       {
         code: 'MATH 101',
         title: 'Integral Calculus with Applications',
-        mark: '96%',
+        percentageGrade: 96,
       },
-      { code: 'MATH 152', title: 'Linear Systems', mark: '94%' },
+      { code: 'MATH 152', title: 'Linear Systems', percentageGrade: 94 },
       {
         code: 'PHYS 157',
         title: 'Introductory Physics for Engineers I',
-        mark: '91%',
+        percentageGrade: 91,
       },
       {
         code: 'PHYS 158',
         title: 'Introductory Physics for Engineers II',
-        mark: '95%',
+        percentageGrade: 95,
       },
       {
         code: 'PHYS 159',
         title: 'Introductory Physics Laboratory for Engineers',
-        mark: '92%',
+        percentageGrade: 92,
       },
-      { code: 'PHYS 170', title: 'Mechanics I', mark: '97%' },
+      { code: 'PHYS 170', title: 'Mechanics I', percentageGrade: 97 },
       {
         code: 'WRDS 150',
         title: 'Writing and Research in the Disciplines',
-        mark: '80%',
+        percentageGrade: 80,
       },
     ],
   },
