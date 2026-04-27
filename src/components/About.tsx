@@ -24,8 +24,8 @@ export default function About() {
             Jazz pieces), and running/going to the gym.
           </p>
           <div className="items-center flex py-8">
-            <FileDownload href={resume} title="View my resume" content="My Resume"/>
-            <FileDownload href={transcript} title="View my transcript" className='mx-2' content="My Transcript"/>
+            <FileDownload href={resume} title="View my resume" content="My Resume" />
+            <FileDownload href={transcript} title="View my transcript" className='mx-2' content="My Transcript" />
             <Button
               target="_blank"
               title="See my projects on Github"

@@ -14,7 +14,7 @@ export const useCustomScroll = () => {
     } else {
       const element = document.querySelector('#root');
       if (element) {
-        element.scrollIntoView({ behavior: 'instant' });
+        element.scrollIntoView({ behavior: 'auto' });
         console.log('Scrolled to top!');
       }
     }

@@ -6,6 +6,7 @@ import Education from '../components/Education';
 
 import { useCustomScroll } from '../useCustomScroll';
 import darkmode from '../darkmode';
+import { skillsMap } from '../constants';
 
 export default function Home() {
   useCustomScroll();
@@ -16,7 +17,7 @@ export default function Home() {
       <Skills />
       <Work />
       <Education />
-      <Projects />
+      <Projects skills={[...skillsMap.keys()]} />
     </>
   );
 }

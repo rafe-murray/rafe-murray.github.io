@@ -4,9 +4,11 @@ import { projects } from "../constants";
 import { card, h4, p } from "../styles";
 import { skillsMap } from "../constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SkillKey } from "../types";
+import { arrayIntersection } from "../utils";
 
-export default function Projects() {
-  const content = projects.map((project) => (
+export default function Projects({ skills }: { skills: SkillKey[] }) {
+  const content = projects.filter(project => arrayIntersection(skills, project.skills).length > 0).map((project) => (
     <div className={card}>
       <h4 className={h4}>
         {project.header}
@@ -56,5 +58,6 @@ export default function Projects() {
       </div>
     </div>
   ));
+
   return <Section header="Projects" content={content} />;
 }
