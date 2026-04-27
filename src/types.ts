@@ -7,30 +7,32 @@ export type SVG = React.FunctionComponent<
 >;
 
 export type SkillKey =
-  | 'Python'
-  | 'MySQL'
-  | 'PostgreSQL'
-  | 'PHP'
+  | 'Angular'
   | 'Bash'
-  | 'Java'
   | 'C'
   | 'C++'
+  | 'CMake'
+  | 'CSS'
+  | 'Docker'
   | 'Git'
   | 'GitHub'
   | 'GitLab'
   | 'HTML'
-  | 'CSS'
-  | 'Tailwind CSS'
+  | 'Java'
   | 'JavaScript'
-  | 'React'
-  | 'Angular'
-  | 'MatLab'
   | 'Kotlin'
-  | 'TypeScript'
+  | 'MatLab'
   | 'MongoDB'
-  | 'Docker'
-  | 'CMake'
-  | 'ProtoBuf';
+  | 'MySQL'
+  | 'PHP'
+  | 'PostgreSQL'
+  | 'ProtoBuf'
+  | 'Python'
+  | 'React'
+  | 'SystemVerilog'
+  | 'Tailwind CSS'
+  | 'TypeScript'
+  | 'Verilog';
 
 export interface Skill {
   title: SkillKey;

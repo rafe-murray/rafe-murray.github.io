@@ -1,61 +1,97 @@
 import { ReactComponent as Angular } from '../assets/tech/angular.svg';
 import { ReactComponent as Bash } from '../assets/tech/bash.svg';
 import { ReactComponent as C } from '../assets/tech/c.svg';
+import { ReactComponent as CMake } from '../assets/tech/cmake.svg';
 import { ReactComponent as Cpp } from '../assets/tech/cpp.svg';
 import { ReactComponent as Css } from '../assets/tech/css.svg';
+import { ReactComponent as Docker } from '../assets/tech/docker.svg';
 import { ReactComponent as Git } from '../assets/tech/git.svg';
-import {ReactComponent as Github} from '../assets/tech/github.svg';
-import {ReactComponent as GithubWhite} from '../assets/tech/github-white.svg';
+import { ReactComponent as Github } from '../assets/tech/github.svg';
+import { ReactComponent as GithubWhite } from '../assets/tech/github-white.svg';
 import { ReactComponent as Gitlab } from '../assets/tech/gitlab.svg';
 import { ReactComponent as Html } from '../assets/tech/html.svg';
 import { ReactComponent as Java } from '../assets/tech/java.svg';
 import { ReactComponent as Js } from '../assets/tech/js.svg';
+import { ReactComponent as Kotlin } from '../assets/tech/kotlin.svg';
 import { ReactComponent as Matlab } from '../assets/tech/matlab.svg';
+import { ReactComponent as MongoDB } from '../assets/tech/mongodb.svg';
 import { ReactComponent as Mysql } from '../assets/tech/mysql.svg';
 import { ReactComponent as Php } from '../assets/tech/php.svg';
 import { ReactComponent as Postgresql } from '../assets/tech/postgresql.svg';
+import { ReactComponent as ProtoBuf } from '../assets/tech/protobuf.svg';
 import { ReactComponent as Python } from '../assets/tech/python.svg';
 import { ReactComponent as React } from '../assets/tech/react.svg';
 import { ReactComponent as Tailwind } from '../assets/tech/tailwind.svg';
-import { ReactComponent as Kotlin } from '../assets/tech/kotlin.svg';
 import { ReactComponent as Ts } from '../assets/tech/ts.svg';
-import { ReactComponent as MongoDB } from '../assets/tech/mongodb.svg';
-import { ReactComponent as Docker } from '../assets/tech/docker.svg';
-import { ReactComponent as CMake } from '../assets/tech/cmake.svg';
-import { ReactComponent as ProtoBuf } from '../assets/tech/protobuf.svg';
 import { CourseLoad, Project, Skill, SkillKey, Workplace } from '../types';
 import { a } from '../styles';
 
-// TODO: renamve to skillsMap
 export const skillsMap = new Map<SkillKey, Skill>([
-  ['Python', { title: 'Python', icon: Python }],
-  ['MySQL', { title: 'MySQL', icon: Mysql }],
-  ['PostgreSQL', { title: 'PostgreSQL', icon: Postgresql }],
-  ['PHP', { title: 'PHP', icon: Php }],
+  ['Angular', { title: 'Angular', icon: Angular }],
   ['Bash', { title: 'Bash', icon: Bash }],
-  ['Java', { title: 'Java', icon: Java }],
   ['C', { title: 'C', icon: C }],
   ['C++', { title: 'C++', icon: Cpp }],
+  ['CMake', { title: 'CMake', icon: CMake }],
+  ['CSS', { title: 'CSS', icon: Css }],
+  ['Docker', { title: 'Docker', icon: Docker }],
   ['Git', { title: 'Git', icon: Git }],
-  ['GitHub', {title: "GitHub", icon: Github, darkIcon: GithubWhite}],
-  // {title: "GitHub", icon: Github, dark: GithubWhite},
+  ['GitHub', { title: "GitHub", icon: Github, darkIcon: GithubWhite }],
   ['GitLab', { title: 'GitLab', icon: Gitlab }],
   ['HTML', { title: 'HTML', icon: Html }],
-  ['CSS', { title: 'CSS', icon: Css }],
-  ['Tailwind CSS', { title: 'Tailwind CSS', icon: Tailwind }],
+  ['Java', { title: 'Java', icon: Java }],
   ['JavaScript', { title: 'JavaScript', icon: Js }],
-  ['React', { title: 'React', icon: React }],
-  ['Angular', { title: 'Angular', icon: Angular }],
-  ['MatLab', { title: 'MatLab', icon: Matlab }],
   ['Kotlin', { title: 'Kotlin', icon: Kotlin }],
-  ['TypeScript', { title: 'TypeScript', icon: Ts }],
+  ['MatLab', { title: 'MatLab', icon: Matlab }],
   ['MongoDB', { title: 'MongoDB', icon: MongoDB }],
-  ['Docker', { title: 'Docker', icon: Docker }],
-  ['CMake', { title: 'CMake', icon: CMake }],
+  ['MySQL', { title: 'MySQL', icon: Mysql }],
+  ['PHP', { title: 'PHP', icon: Php }],
+  ['PostgreSQL', { title: 'PostgreSQL', icon: Postgresql }],
   ['ProtoBuf', { title: 'ProtoBuf', icon: ProtoBuf }],
+  ['Python', { title: 'Python', icon: Python }],
+  ['React', { title: 'React', icon: React }],
+  ['SystemVerilog', { title: 'SystemVerilog', icon: Github }], // TODO: fix icon
+  ['Tailwind CSS', { title: 'Tailwind CSS', icon: Tailwind }],
+  ['TypeScript', { title: 'TypeScript', icon: Ts }],
 ]);
 
 export const projects: Project[] = [
+  {
+    header: "ARC4 Cracker",
+    content: [
+      "I implemented a brute force algorithm on an FPGA to crack an 8-bit ARC4 encryption key, recovering the original plaintext. The underlying assumption for this project is that a \"Decrypted\" message is made up of only ASCII characters. The hardware module sequentially tries different keys, checking if the potential plaintext is all valid ASCII. If it is, the module stores the plaintext and correct key in memory. After creating an initial implementation, I sped it up by increasing the core count to 184, replacing single-port memories with dual-port memories, and optimizing away redundant states from state machines. I also added a Synopsis Design Constraints file to increase the clock speed. These changes resulted in a roughly 100x speed increase."
+    ],
+    skills: ['SystemVerilog']
+  },
+  {
+    header: "VGA Bresenham Circle & Reuleaux Triangle",
+    content: [
+      "I implemented the ",
+      <a
+        className={a}
+        href="https://en.wikipedia.org/wiki/Midpoint_circle_algorithm"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Bresenham Circle Algorithm
+      </a>,
+      " to draw a circle of a specified radius, centre, and colour on a VGA screen using an FPGA. I then combined three  of these modules with some extra constraints to draw a ",
+      <a
+        className={a}
+        href="https://en.wikipedia.org/wiki/Reuleaux_triangle"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Reuleaux Triangle
+      </a>,
+      ", once again with a customizable diameter, centre, and colour."
+    ],
+    skills: ['SystemVerilog']
+  },
+  {
+    header: "Baccarat Simulator",
+    content: "I simulated a variation of Baccarat on an FPGA, using the built-in 7-segment displays to show the dealt cards, and the LEDs to display the score and winner(s) of the hand. The user was able to step through the different phases of the hand to see it play out.",
+    skills: ['SystemVerilog']
+  },
   {
     header: "Circuit Solver",
     content: [
@@ -234,8 +270,8 @@ export const work: Workplace[] = [
     employer: 'JMA Consulting',
     jobs: [
       {
-        startDate: new Date(2025,4),
-        endDate: new Date(2025,7),
+        startDate: new Date(2025, 4),
+        endDate: new Date(2025, 7),
         role: 'Junior Software Developer',
         achievements: [
           ' Created custom forms to meet client needs, allowing an industry certification board to quickly register users for exams, a white-label SAAS to update business information, and another client to import data.',
@@ -247,7 +283,7 @@ export const work: Workplace[] = [
       },
       {
         startDate: new Date(2024, 4),
-        endDate: new Date(2024,7),
+        endDate: new Date(2024, 7),
         role: 'Junior Software Developer',
         achievements: [
           'Reimplemented Django Python scrapers of Canadian elected officials’ information on 75 websites and stored it in a database for later use by a petition service',
