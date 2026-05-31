@@ -1,11 +1,16 @@
 import Tooltip from '@mui/material/Tooltip';
+import { skillElementDark, skillElementLight } from '../styles';
 import { SVG } from '../types';
 
-export default function Skill({title, Icon, className}: {title: string, Icon: SVG, className: string}){ 
-    
-    return(
-        <Tooltip title={title} placement="top" arrow>
-            <Icon className={className}/>
-        </Tooltip>
-    );
+export default function Skill({ title, Icon, DarkIcon, className }: { title: string, Icon: SVG, DarkIcon?: SVG | undefined, className: string }) {
+
+  return (
+    <Tooltip title={title} placement="top" arrow>
+      {
+        DarkIcon
+          ? <DarkIcon className={skillElementDark + " " + className} />
+          : <Icon className={skillElementLight + " " + className} />
+      }
+    </Tooltip>
+  );
 }

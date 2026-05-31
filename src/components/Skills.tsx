@@ -2,22 +2,18 @@ import Section from "./Section";
 import { skillsMap } from "../constants";
 import SkillElement from "./Skill";
 import { Skill } from "../types";
+import { skillCardsContainer, skillElementCommon } from "../styles";
 
-export default function Skills(){
+export default function Skills() {
   var skillsArr: Skill[] = [];
   skillsMap.forEach(el => {
     skillsArr.push(el)
   });
   const skillCards = skillsArr.map(skill =>
-      <>
-      <SkillElement title={skill.title} Icon={skill.icon} className={(skill.darkIcon ? "flex dark:hidden " : "") + "size-20 aspect-square"}/>
-      {skill.darkIcon? 
-          <SkillElement title={skill.title} Icon={skill.darkIcon} className="hidden dark:flex size-20 aspect-square" /> 
-          : ""}
-      </>
+    <SkillElement title={skill.title} Icon={skill.icon} DarkIcon={skill.darkIcon} className={skillElementCommon} />
   );
-  const content = <div className="flex flex-row flex-wrap gap-6 justify-center pb-12">{skillCards}</div>
+  const content = <div className={skillCardsContainer}>{skillCards}</div>
   return (
-      <Section header="Skills" content={content}/>
+    <Section header="Skills" content={content} />
   );
 }

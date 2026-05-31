@@ -9,3 +9,10 @@ export const h4 = 'text-xl font-semibold text-zinc-800 dark:text-gray-50 pb-2';
 export const p = 'text-gray-600 dark:text-gray-50';
 export const a =
   'text-cyan-600 dark:text-cyan-400 hover:underline hover:text-cyan-500 dark:hover:text-cyan-600';
+
+export const skillElementCommon = 'size-20 aspect-square';
+export const skillElementDark = 'hidden dark:flex';
+export const skillElementLight = 'flex dark:hidden';
+
+export const skillCardsContainer =
+  'flex flex-row flex-wrap gap-6 justify-center pb-12';

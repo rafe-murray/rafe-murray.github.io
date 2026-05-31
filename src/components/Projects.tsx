@@ -1,14 +1,40 @@
 import Section from "./Section";
-import Skill from "./Skill";
+import SkillElement from "./Skill";
 import { projects } from "../constants";
 import { card, h4, p } from "../styles";
 import { skillsMap } from "../constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SkillKey } from "../types";
+import { SkillKey, Skill } from "../types";
 import { arrayIntersection } from "../utils";
+import { useState } from "react";
+import { Chip } from "@mui/material";
 
-export default function Projects({ skills }: { skills: SkillKey[] }) {
-  const content = projects.filter(project => arrayIntersection(skills, project.skills).length > 0).map((project) => (
+// TODO: move to own file
+function SkillChip({ skill, onClick }: { skill: Skill, onClick: (skillKey: SkillKey) => void }) {
+  const [isSelected, setIsSelected] = useState(false);
+  return <Chip
+    avatar={<skill.icon />}
+    label={skill.title}
+    onClick={() => { onClick(skill.title); setIsSelected(prevState => !prevState) }}
+    className={isSelected ? "!bg-cyan-400" : "bg-slate-100"}
+  />
+}
+
+export default function Projects() {
+  const [selectedSkills, setSelectedSkills] = useState<SkillKey[]>([]);
+
+  function toggleSkillSelected(skillKey: SkillKey): void {
+    if (selectedSkills.includes(skillKey)) {
+      setSelectedSkills(selectedSkills.filter(selectedSkill => selectedSkill !== skillKey));
+    } else {
+      setSelectedSkills(selectedSkills.concat(skillKey));
+    }
+  }
+
+  const skillChips = [...skillsMap.values()].map(skill => (
+    <SkillChip skill={skill} onClick={toggleSkillSelected} />)
+  );
+  const content = projects.filter(project => arrayIntersection(selectedSkills, project.skills).length > 0).map((project) => (
     <div className={card}>
       <h4 className={h4}>
         {project.header}
@@ -35,19 +61,19 @@ export default function Projects({ skills }: { skills: SkillKey[] }) {
           const skillObj = skillsMap.get(skill)!;
           return (
             <>
-              <Skill
+              <SkillElement
                 title={skillObj.title}
                 Icon={skillObj.icon}
                 className={
                   (skillObj.darkIcon ? "flex dark:hidden " : "") +
-                  "size-14 aspect-square"
+                  "size-12 aspect-square"
                 }
               />
               {skillObj.darkIcon ? (
-                <Skill
+                <SkillElement
                   title={skillObj.title}
                   Icon={skillObj.darkIcon}
-                  className="hidden dark:flex size-14 aspect-square"
+                  className="hidden dark:flex size-12 aspect-square"
                 />
               ) : (
                 ""
@@ -59,5 +85,11 @@ export default function Projects({ skills }: { skills: SkillKey[] }) {
     </div>
   ));
 
-  return <Section header="Projects" content={content} />;
+  return <Section header="Projects" content={<>
+    <p className={p}>Toggle one or more icons to see all associated projects</p>
+    <div className="py-4">
+      {skillChips}
+    </div>
+    {content}
+  </>} />;
 }
