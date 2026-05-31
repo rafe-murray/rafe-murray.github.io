@@ -21,6 +21,7 @@ import { ReactComponent as Postgresql } from '../assets/tech/postgresql.svg';
 import { ReactComponent as ProtoBuf } from '../assets/tech/protobuf.svg';
 import { ReactComponent as Python } from '../assets/tech/python.svg';
 import { ReactComponent as React } from '../assets/tech/react.svg';
+import { ReactComponent as Systemverilog } from '../assets/tech/systemverilog.svg';
 import { ReactComponent as Tailwind } from '../assets/tech/tailwind.svg';
 import { ReactComponent as Ts } from '../assets/tech/ts.svg';
 import { CourseLoad, Project, Skill, SkillKey, Workplace } from '../types';
@@ -49,7 +50,7 @@ export const skillsMap = new Map<SkillKey, Skill>([
   ['ProtoBuf', { title: 'ProtoBuf', icon: ProtoBuf }],
   ['Python', { title: 'Python', icon: Python }],
   ['React', { title: 'React', icon: React }],
-  ['SystemVerilog', { title: 'SystemVerilog', icon: Github }], // TODO: fix icon
+  ['SystemVerilog', { title: 'SystemVerilog', icon: Systemverilog }],
   ['Tailwind CSS', { title: 'Tailwind CSS', icon: Tailwind }],
   ['TypeScript', { title: 'TypeScript', icon: Ts }],
 ]);
