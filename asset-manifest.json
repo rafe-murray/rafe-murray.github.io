@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.7271424a.css",
-    "main.js": "/static/js/main.ef7678aa.js",
+    "main.js": "/static/js/main.03c183de.js",
     "static/js/453.b3157c58.chunk.js": "/static/js/453.b3157c58.chunk.js",
     "static/media/rafe-murray.jpg": "/static/media/rafe-murray.45d11f57e59077c8d0de.jpg",
     "static/media/rafe_murray_resume.pdf": "/static/media/rafe_murray_resume.0705425c33f9bfd7abde.pdf",
@@ -12,6 +12,7 @@
     "static/media/postgresql.svg": "/static/media/postgresql.ae92b576b8ea41666538c0756df27969.svg",
     "static/media/mysql.svg": "/static/media/mysql.4eed37d524f931d0248fc6e953ef4dc6.svg",
     "static/media/java.svg": "/static/media/java.a351f739f47fda7a637b86ffa530d56a.svg",
+    "static/media/systemverilog.svg": "/static/media/systemverilog.87fbfced0877f079c0d076c89416bb2f.svg",
     "static/media/react.svg": "/static/media/react.e68b35f4774979ae220b1d5d7b345b00.svg",
     "static/media/bash.svg": "/static/media/bash.c5fc68986882b0e137d4d6152c039d63.svg",
     "static/media/cpp.svg": "/static/media/cpp.57a453252629ecb08b12998cdbd7557c.svg",
@@ -33,11 +34,11 @@
     "static/media/css.svg": "/static/media/css.4e47c3122b8d2476a02f97dcfcb28640.svg",
     "static/media/html.svg": "/static/media/html.f318c8b1d5945fa9adc827ae94849cb1.svg",
     "main.7271424a.css.map": "/static/css/main.7271424a.css.map",
-    "main.ef7678aa.js.map": "/static/js/main.ef7678aa.js.map",
+    "main.03c183de.js.map": "/static/js/main.03c183de.js.map",
     "453.b3157c58.chunk.js.map": "/static/js/453.b3157c58.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7271424a.css",
-    "static/js/main.ef7678aa.js"
+    "static/js/main.03c183de.js"
   ]
 }
