@@ -8,7 +8,10 @@
     // See also https://aka.ms/tsconfig/module
     "module": "esnext",
     "target": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "types": [
+      "vite-plugin-svgr/client"
+    ],
     // "esModuleInterop": true,
     // Other Outputs
     "sourceMap": true,

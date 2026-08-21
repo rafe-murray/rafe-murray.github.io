@@ -31,7 +31,7 @@ export default function Education() {
             {/* TODO: Switch this whole file to be content vs display */}
             <h4 className={h4}>September 2019 – June 2023</h4>
           </div>
-          <p className={p}>
+          <div className={p}>
             <ul className="list-disc ps-4">
               <li>
                 Received the Governor General’s Academic Medal for the highest
@@ -54,7 +54,7 @@ export default function Education() {
                 Waterloo’s Fermat contest
               </li>
             </ul>
-          </p>
+          </div>
         </div>
       </div>
       <CallToAction path="/courses" label="See all my courses" />

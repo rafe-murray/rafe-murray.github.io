@@ -5,14 +5,14 @@ import Projects from '../components/Projects';
 import Education from '../components/Education';
 
 import { useCustomScroll } from '../useCustomScroll';
-import darkmode from '../darkmode';
+// import darkmode from '../darkmode';
 import { skillsMap } from '../constants';
 
 export default function Home() {
   useCustomScroll();
   return (
     <>
-      <script async={true} src={darkmode} />
+      {/* <script async={true} src={darkmode} /> */}
       <About />
       <Skills />
       <Work />
