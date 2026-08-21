@@ -20,14 +20,14 @@ export default function Navbar() {
     { title: 'Projects', hash: 'projects' },
   ];
   const navbarItems = items.map(item => (
-    <li className="p-4">
+    <li key={item.hash} className="p-4">
       <HashLink to={'/#' + item.hash} className="hover:text-cyan-500">
         {item.title}
       </HashLink>
     </li>
   ));
   const mobileNavItems = items.map(item => (
-    <li className="p-2 m-2 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-md">
+    <li key={item.hash} className="p-2 m-2 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-md">
       <a
         className="inline-block w-full"
         href={'#' + item.hash}

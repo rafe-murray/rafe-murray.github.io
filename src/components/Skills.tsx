@@ -10,7 +10,7 @@ export default function Skills() {
     skillsArr.push(el)
   });
   const skillCards = skillsArr.map(skill =>
-    <SkillElement title={skill.title} Icon={skill.icon} DarkIcon={skill.darkIcon} className={skillElementCommon} />
+    <SkillElement key={skill.title} title={skill.title} Icon={skill.icon} DarkIcon={skill.darkIcon} className={skillElementCommon} />
   );
   const content = <div className={skillCardsContainer}>{skillCards}</div>
   return (

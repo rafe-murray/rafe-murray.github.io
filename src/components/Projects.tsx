@@ -32,7 +32,7 @@ export default function Projects() {
   }
 
   const skillChips = [...skillsMap.values()].map(skill => (
-    <SkillChip skill={skill} onClick={toggleSkillSelected} />)
+    <SkillChip key={skill.title} skill={skill} onClick={toggleSkillSelected} />)
   );
   const content = projects.filter(project => arrayIntersection(selectedSkills, project.skills).length > 0).map((project) => (
     <div className={card}>
