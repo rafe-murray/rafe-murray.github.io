@@ -1,2 +1,4 @@
 allowBuilds:
   puppeteer: true
+patchedDependencies:
+  "@rehype-pretty/transformers@0.13.2": "patches/@rehype-pretty__transformers@0.13.2.patch"

@@ -1,0 +1,27 @@
+diff --git a/dist/chunk-P2G3MLOR.js b/dist/chunk-P2G3MLOR.js
+index c3d5a993c95b0919c58b52b3c11f1dca11b76884..0e293693938ea995e88d0065f734f42518b7d763 100644
+--- a/dist/chunk-P2G3MLOR.js
++++ b/dist/chunk-P2G3MLOR.js
+@@ -19,14 +19,14 @@ function transformerCopyButton(options = {
+           "aria-label": "Copy code",
+           data: this.source,
+           class: "rehype-pretty-copy",
+-          onclick: trimWhitespace(
+-            /* javascript */
+-            `
+-            navigator.clipboard.writeText(this.attributes.data.value);
+-            this.classList.add('rehype-pretty-copied');
+-            window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), ${options.feedbackDuration});
+-          `
+-          )
++          // onclick: trimWhitespace(
++          //   /* javascript */
++          //   `
++          //   navigator.clipboard.writeText(this.attributes.data.value);
++          //   this.classList.add('rehype-pretty-copied');
++          //   window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), ${options.feedbackDuration});
++          // `
++          // )
+         },
+         children: [
+           {

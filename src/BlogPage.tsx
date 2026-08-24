@@ -2,6 +2,7 @@ import type { MDXComponents } from 'mdx/types'
 import { a, h1, h2, h3, h4, p, ul } from './styles';
 import { lazy } from 'react';
 import { useParams } from 'react-router';
+import RehypePrettyCodeCopy from './components/RehypePrettyCodeCopy';
 
 export default function BlogPage() {
   const params = useParams();
@@ -23,8 +24,12 @@ export default function BlogPage() {
     p: (properties) => <p className={p} {...properties} />,
     a: (properties) => <a className={a} {...properties} />,
     ul: (properties) => <ul className={ul} {...properties} />,
+    pre: (properties) => <pre className="p-4 rounded-md" {...properties} />
   }
   return (
-    <MDX components={components} />
+    <>
+      <RehypePrettyCodeCopy />
+      <MDX components={components} />
+    </>
   )
 }

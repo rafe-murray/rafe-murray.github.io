@@ -14,6 +14,7 @@ export const a =
   'text-cyan-600 dark:text-cyan-400 hover:underline hover:text-cyan-500 dark:hover:text-cyan-600';
 
 export const ul = 'list-disc ps-4';
+export const pre = '';
 
 export const skillElementCommon = 'size-14 aspect-square';
 export const skillElementDark = 'hidden dark:flex';
