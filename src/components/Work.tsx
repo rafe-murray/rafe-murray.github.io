@@ -1,6 +1,6 @@
 import Section from "./Section";
 import { work } from "../constants";
-import { card, h3, h4, p } from "../styles";
+import { card, h3, h4, p, ul } from "../styles";
 import { dateToMonthYearString } from "../utils";
 
 export default function Work() {
@@ -8,13 +8,13 @@ export default function Work() {
     <div key={work.employer} className={card}>
       <h3 className={h3}>{work.employer}</h3>
       {work.jobs.map(job =>
-        <div key={job.startDate.toISOString()} className="pb-10">
+        <div key={job.startDate.toISOString()}>
           <div className="flex flex-col sm:flex-row justify-between">
             <h4 className={h4}>{job.role}</h4>
             <h4 className={h4}>{dateToMonthYearString(job.startDate) + " - " + dateToMonthYearString(job.endDate)}</h4>
           </div>
           <div className={p}>
-            <ul className="list-disc ps-4">
+            <ul className={ul}>
               {job.achievements.map((achievement, index) => <li key={index}>{achievement}</li>)}
             </ul>
           </div>

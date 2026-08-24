@@ -1,4 +1,4 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router-dom";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -39,9 +39,7 @@ export function Layout({
       </head>
       <body className="dark:bg-black">
         <noscript>You need to enable JavaScript to run this app.</noscript>
-        <Navbar />
         {children}
-        <Footer />
         <ScrollRestoration />
         <Scripts />
         {/* This HTML file is a template. */}

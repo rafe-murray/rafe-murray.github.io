@@ -10,7 +10,7 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 export default function About() {
   return (
     <div id="About">
-      <div className="max-w-7xl flex flex-col sm:flex-row items-center mx-auto place-content-center p-4 pt-20 min-h-screen">
+      <div className="max-w-7xl flex flex-col sm:flex-row items-center mx-auto place-content-center pb-4 min-h-screen">
         <div className="sm:w-2/3 sm:pr-6">
           <h1 className={h1}>Hi, I'm Rafe</h1>
           <p className={p + ' text-lg'}>
@@ -23,7 +23,7 @@ export default function About() {
             UBC nordic skiing team, playing piano (especially romantic era and
             Jazz pieces), and running/going to the gym.
           </p>
-          <div className="items-center flex py-8">
+          <div className="items-center flex pb-8">
             <FileDownload href={resume} title="View my resume" content="My Resume" />
             <FileDownload href={transcript} title="View my transcript" className='mx-2' content="My Transcript" />
             <Button

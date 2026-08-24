@@ -1,6 +1,6 @@
 import { courseLoads } from '../constants';
 import Section from '../components/Section';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCustomScroll } from '../useCustomScroll';
 import CourseLoadElement from '../components/CourseLoad';
@@ -10,7 +10,7 @@ export default function Courses() {
   const content = (
     <>
       <div className="grid sm:grid-cols-2 sm:gap-x-5 grid-cols-1">
-        {courseLoads.map(courseLoad => <CourseLoadElement courseLoad={courseLoad}/>)}
+        {courseLoads.map(courseLoad => <CourseLoadElement courseLoad={courseLoad} />)}
       </div>
     </>
   );

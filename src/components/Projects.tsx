@@ -16,7 +16,8 @@ function SkillChip({ skill, onClick }: { skill: Skill, onClick: (skillKey: Skill
     avatar={<skill.icon />}
     label={skill.title}
     onClick={() => { onClick(skill.title); setIsSelected(prevState => !prevState) }}
-    className={isSelected ? "!bg-cyan-400" : "bg-slate-100"}
+    sx={{ m: 0.3 }}
+    className={isSelected ? "bg-cyan-400!" : "bg-slate-100"}
   />
 }
 
@@ -35,7 +36,7 @@ export default function Projects() {
     <SkillChip key={skill.title} skill={skill} onClick={toggleSkillSelected} />)
   );
   const content = projects.filter(project => arrayIntersection(selectedSkills, project.skills).length > 0).map((project) => (
-    <div className={card}>
+    <div className={card} key={project.header}>
       <h4 className={h4}>
         {project.header}
         {project.github ? (
@@ -47,7 +48,7 @@ export default function Projects() {
             className="pl-6 text-2xl"
           >
             <FontAwesomeIcon
-              icon="fa-brands fa-github"
+              icon={["fab", "github"]}
               className="hover:scale-105"
             />
           </a>
@@ -87,7 +88,7 @@ export default function Projects() {
 
   return <Section header="Projects" content={<>
     <p className={p}>Toggle one or more icons to see all associated projects</p>
-    <div className="py-4">
+    <div className="pb-4">
       {skillChips}
     </div>
     {content}
