@@ -17,6 +17,7 @@ export type SkillKey =
   | "Git"
   | "GitHub"
   | "GitLab"
+  | "Go"
   | "HTML"
   | "Java"
   | "JavaScript"
@@ -45,6 +46,7 @@ export interface Project {
   content: string | React.ReactNode[];
   skills: SkillKey[];
   github?: string;
+  gitlab?: string;
 }
 
 export interface Job {

@@ -9,6 +9,8 @@ import Git from '../assets/tech/git.svg';
 import Github from '../assets/tech/github.svg';
 import GithubWhite from '../assets/tech/github-white.svg';
 import Gitlab from '../assets/tech/gitlab.svg';
+import Go from '../assets/tech/go.svg';
+import GoWhite from '../assets/tech/go-white.svg';
 import Html from '../assets/tech/html.svg';
 import Java from '../assets/tech/java.svg';
 import Js from '../assets/tech/js.svg';
@@ -28,6 +30,7 @@ import Ts from '../assets/tech/ts.svg';
 import { CourseLoad, Project, Skill, SkillKey, Workplace } from '../types';
 import { a } from '../styles';
 
+// TODO: find where the title is used as a key and then change type of title to string and SkillKey to an enum (so that rename tooling works better)
 export const skillsMap = new Map<SkillKey, Skill>([
   ['Angular', { title: 'Angular', icon: Angular }],
   ['Bash', { title: 'Bash', icon: Bash }],
@@ -39,6 +42,7 @@ export const skillsMap = new Map<SkillKey, Skill>([
   ['Git', { title: 'Git', icon: Git }],
   ['GitHub', { title: "GitHub", icon: Github, darkIcon: GithubWhite }],
   ['GitLab', { title: 'GitLab', icon: Gitlab }],
+  ['Go', { title: 'Go', icon: Go, darkIcon: GoWhite }],
   ['HTML', { title: 'HTML', icon: Html }],
   ['Java', { title: 'Java', icon: Java }],
   ['JavaScript', { title: 'JavaScript', icon: Js }],
@@ -56,6 +60,13 @@ export const skillsMap = new Map<SkillKey, Skill>([
 ]);
 
 export const projects: Project[] = [
+  {
+    header: "CiviCRM Operator",
+    content: [
+      ""
+    ],
+    skills: ["Go",]
+  },
   {
     header: "ARC4 Cracker",
     content: [

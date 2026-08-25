@@ -4,6 +4,7 @@ import { projects } from "../constants";
 import { card, h4, p, skillElementCommon } from "../styles";
 import { skillsMap } from "../constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { getDarkModeIcon } from "../utils";
 import { SkillKey, Skill } from "../types";
 import { arrayIntersection } from "../utils";
 import { useState } from "react";
@@ -13,8 +14,10 @@ import ThemedIcon from "./Icon";
 // TODO: move to own file
 function SkillChip({ skill, onClick }: { skill: Skill, onClick: (skillKey: SkillKey) => void }) {
   const [isSelected, setIsSelected] = useState(false);
+  const DarkModeIcon = getDarkModeIcon(skill);
   return <Chip
-    avatar={isSelected ? <skill.icon /> : <ThemedIcon Icon={skill.icon} DarkIcon={skill.darkIcon} />}
+    avatar={isSelected ? <DarkModeIcon /> : <ThemedIcon Icon={skill.icon} DarkIcon={skill.darkIcon} />
+    }
     label={skill.title}
     onClick={() => { onClick(skill.title); setIsSelected(prevState => !prevState) }}
     sx={{
