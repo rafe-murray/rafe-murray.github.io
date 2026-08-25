@@ -39,6 +39,13 @@ const config: Config = {
   },
   themes: ["@docusaurus/theme-mermaid"],
 
+  stylesheets: [
+    {
+      href: "https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap",
+      rel: "stylesheet",
+    },
+  ],
+
   presets: [
     [
       "classic",
