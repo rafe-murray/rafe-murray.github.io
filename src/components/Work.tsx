@@ -9,7 +9,7 @@ export default function Work() {
       <h3 className={h3}>{work.employer}</h3>
       {work.jobs.map(job =>
         <div key={job.startDate.toISOString()}>
-          <div className="flex flex-col sm:flex-row justify-between">
+          <div className="tw:flex tw:flex-col tw:sm:flex-row tw:justify-between">
             <h4 className={h4}>{job.role}</h4>
             <h4 className={h4}>{dateToMonthYearString(job.startDate) + " - " + dateToMonthYearString(job.endDate)}</h4>
           </div>

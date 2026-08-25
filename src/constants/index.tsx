@@ -1,29 +1,30 @@
-import Angular from '../assets/tech/angular.svg?react';
-import Bash from '../assets/tech/bash.svg?react';
-import C from '../assets/tech/c.svg?react';
-import CMake from '../assets/tech/cmake.svg?react';
-import Cpp from '../assets/tech/cpp.svg?react';
-import Css from '../assets/tech/css.svg?react';
-import Docker from '../assets/tech/docker.svg?react';
-import Git from '../assets/tech/git.svg?react';
-import Github from '../assets/tech/github.svg?react';
-import GithubWhite from '../assets/tech/github-white.svg?react';
-import Gitlab from '../assets/tech/gitlab.svg?react';
-import Html from '../assets/tech/html.svg?react';
-import Java from '../assets/tech/java.svg?react';
-import Js from '../assets/tech/js.svg?react';
-import Kotlin from '../assets/tech/kotlin.svg?react';
-import Matlab from '../assets/tech/matlab.svg?react';
-import MongoDB from '../assets/tech/mongodb.svg?react';
-import Mysql from '../assets/tech/mysql.svg?react';
-import Php from '../assets/tech/php.svg?react';
-import Postgresql from '../assets/tech/postgresql.svg?react';
-import ProtoBuf from '../assets/tech/protobuf.svg?react';
-import Python from '../assets/tech/python.svg?react';
-import React from '../assets/tech/react.svg?react';
-import Systemverilog from '../assets/tech/systemverilog.svg?react';
-import Tailwind from '../assets/tech/tailwind.svg?react';
-import Ts from '../assets/tech/ts.svg?react';
+import Angular from '../assets/tech/angular.svg';
+import Bash from '../assets/tech/bash.svg';
+import C from '../assets/tech/c.svg';
+import CMake from '../assets/tech/cmake.svg';
+import Cpp from '../assets/tech/cpp.svg';
+import Css from '../assets/tech/css.svg';
+import Docker from '../assets/tech/docker.svg';
+import Git from '../assets/tech/git.svg';
+import Github from '../assets/tech/github.svg';
+import GithubWhite from '../assets/tech/github-white.svg';
+import Gitlab from '../assets/tech/gitlab.svg';
+import Html from '../assets/tech/html.svg';
+import Java from '../assets/tech/java.svg';
+import Js from '../assets/tech/js.svg';
+import Kotlin from '../assets/tech/kotlin.svg';
+import MongoDB from '../assets/tech/mongodb.svg';
+import MongoDBWhite from '../assets/tech/mongodb-white.svg';
+import Mysql from '../assets/tech/mysql.svg';
+import Php from '../assets/tech/php.svg';
+import Postgresql from '../assets/tech/postgresql.svg';
+import ProtoBuf from '../assets/tech/protobuf.svg';
+import Python from '../assets/tech/python.svg';
+import React from '../assets/tech/react-dark.svg';
+import ReactLight from '../assets/tech/react.svg';
+import Systemverilog from '../assets/tech/systemverilog.svg';
+import Tailwind from '../assets/tech/tailwind.svg';
+import Ts from '../assets/tech/ts.svg';
 import { CourseLoad, Project, Skill, SkillKey, Workplace } from '../types';
 import { a } from '../styles';
 
@@ -42,14 +43,13 @@ export const skillsMap = new Map<SkillKey, Skill>([
   ['Java', { title: 'Java', icon: Java }],
   ['JavaScript', { title: 'JavaScript', icon: Js }],
   ['Kotlin', { title: 'Kotlin', icon: Kotlin }],
-  ['MatLab', { title: 'MatLab', icon: Matlab }],
-  ['MongoDB', { title: 'MongoDB', icon: MongoDB }],
+  ['MongoDB', { title: 'MongoDB', icon: MongoDB, darkIcon: MongoDBWhite }],
   ['MySQL', { title: 'MySQL', icon: Mysql }],
   ['PHP', { title: 'PHP', icon: Php }],
   ['PostgreSQL', { title: 'PostgreSQL', icon: Postgresql }],
   ['ProtoBuf', { title: 'ProtoBuf', icon: ProtoBuf }],
   ['Python', { title: 'Python', icon: Python }],
-  ['React', { title: 'React', icon: React }],
+  ['React', { title: 'React', icon: React, darkIcon: ReactLight }],
   ['SystemVerilog', { title: 'SystemVerilog', icon: Systemverilog }],
   ['Tailwind CSS', { title: 'Tailwind CSS', icon: Tailwind }],
   ['TypeScript', { title: 'TypeScript', icon: Ts }],

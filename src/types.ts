@@ -1,38 +1,38 @@
-import type React = require('react');
+import type React = require("react");
 
-export type SVG = React.FunctionComponent<
+export type SVG = React.ComponentType<
   React.SVGProps<SVGSVGElement> & {
     title?: string;
   }
 >;
 
 export type SkillKey =
-  | 'Angular'
-  | 'Bash'
-  | 'C'
-  | 'C++'
-  | 'CMake'
-  | 'CSS'
-  | 'Docker'
-  | 'Git'
-  | 'GitHub'
-  | 'GitLab'
-  | 'HTML'
-  | 'Java'
-  | 'JavaScript'
-  | 'Kotlin'
-  | 'MatLab'
-  | 'MongoDB'
-  | 'MySQL'
-  | 'PHP'
-  | 'PostgreSQL'
-  | 'ProtoBuf'
-  | 'Python'
-  | 'React'
-  | 'SystemVerilog'
-  | 'Tailwind CSS'
-  | 'TypeScript'
-  | 'Verilog';
+  | "Angular"
+  | "Bash"
+  | "C"
+  | "C++"
+  | "CMake"
+  | "CSS"
+  | "Docker"
+  | "Git"
+  | "GitHub"
+  | "GitLab"
+  | "HTML"
+  | "Java"
+  | "JavaScript"
+  | "Kotlin"
+  | "MatLab"
+  | "MongoDB"
+  | "MySQL"
+  | "PHP"
+  | "PostgreSQL"
+  | "ProtoBuf"
+  | "Python"
+  | "React"
+  | "SystemVerilog"
+  | "Tailwind CSS"
+  | "TypeScript"
+  | "Verilog";
 
 export interface Skill {
   title: SkillKey;

@@ -1,23 +1,28 @@
 import Section from "./Section";
 import SkillElement from "./Skill";
 import { projects } from "../constants";
-import { card, h4, p } from "../styles";
+import { card, h4, p, skillElementCommon } from "../styles";
 import { skillsMap } from "../constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SkillKey, Skill } from "../types";
 import { arrayIntersection } from "../utils";
 import { useState } from "react";
 import { Chip } from "@mui/material";
+import ThemedIcon from "./Icon";
 
 // TODO: move to own file
 function SkillChip({ skill, onClick }: { skill: Skill, onClick: (skillKey: SkillKey) => void }) {
   const [isSelected, setIsSelected] = useState(false);
   return <Chip
-    avatar={<skill.icon />}
+    avatar={isSelected ? <skill.icon /> : <ThemedIcon Icon={skill.icon} DarkIcon={skill.darkIcon} />}
     label={skill.title}
     onClick={() => { onClick(skill.title); setIsSelected(prevState => !prevState) }}
-    sx={{ m: 0.3 }}
-    className={isSelected ? "bg-cyan-400!" : "bg-slate-100"}
+    sx={{
+      m: 0.3,
+      p: 0.5,
+      color: "currentColor"
+    }}
+    className={isSelected ? "tw:text-zinc-800! tw:bg-cyan-400!" : "tw:dark:bg-slate-800! tw:bg-slate-100!"}
   />
 }
 
@@ -45,40 +50,30 @@ export default function Projects() {
             target="_blank"
             rel="noreferrer"
             title="View GitHub repo"
-            className="pl-6 text-2xl"
+            className="tw:pl-6 tw:text-2xl"
           >
             <FontAwesomeIcon
               icon={["fab", "github"]}
-              className="hover:scale-105"
+              className="tw:hover:scale-105"
             />
           </a>
         ) : (
           ""
         )}
       </h4>
-      <p className={p + " pb-16"}>{project.content}</p>
-      <div className="flex flex-row flex-wrap gap-6">
+      <p className={p}>{project.content}</p>
+      <div className="tw:flex tw:flex-row tw:flex-wrap tw:gap-6">
         {project.skills.map((skill) => {
           const skillObj = skillsMap.get(skill)!;
           return (
             <>
               <SkillElement
+                key={skillObj.title}
                 title={skillObj.title}
                 Icon={skillObj.icon}
-                className={
-                  (skillObj.darkIcon ? "flex dark:hidden " : "") +
-                  "size-12 aspect-square"
-                }
+                className={skillElementCommon}
+                DarkIcon={skillObj.darkIcon}
               />
-              {skillObj.darkIcon ? (
-                <SkillElement
-                  title={skillObj.title}
-                  Icon={skillObj.darkIcon}
-                  className="hidden dark:flex size-12 aspect-square"
-                />
-              ) : (
-                ""
-              )}
             </>
           );
         })}
@@ -88,7 +83,7 @@ export default function Projects() {
 
   return <Section header="Projects" content={<>
     <p className={p}>Toggle one or more icons to see all associated projects</p>
-    <div className="pb-4">
+    <div className="tw:pb-4">
       {skillChips}
     </div>
     {content}
