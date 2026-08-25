@@ -1,23 +1,3 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
-
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
-
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
-
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
-
 k8s:
   label: Kubernetes
   permalink: /k8s
@@ -27,3 +7,8 @@ observability:
   label: Observability
   permalink: observability
   description: Posts about observability
+
+ci-cd:
+  label: CI/CD
+  permalink: ci-cd
+  description: Posts about CI/CD
