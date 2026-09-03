@@ -1,7 +1,7 @@
 ---
-title: Setting up Obserability for Kubernetes
+title: Setting up Observability for Kubernetes
 authors: rafe
-date: 2026-08-24 20:34
+date: 2026-09-03 17:14
 tags: [k8s, observability]
 ---
 
@@ -20,13 +20,13 @@ distributed architectures using three "pillars": metrics, logs, and traces.
 OpenTelemetry (OTel) is an open standard for logs, metrics, and traces. It
 defines a standard format to export these signals, a set of attributes that they
 should use, and provides language SDKs for most popular languages. An important
-feature compared to other frameworks and standards is that it uses the same
+feature compared to other stacks and standards is that it uses the same
 attributes (as appropriate) for all three signals. This makes it easy to
 correlate between them when debugging an application. Across the industry, it is
-being widely adopted. Existing frameworks have added support and new frameworks
-ship with native support out of the box.
+being widely adopted. Existing stacks have added support and new stacks ship
+with native support out of the box.
 
-## Notable Frameworks/Stacks
+## Notable Observability Stacks
 
 ### LGTM
 
@@ -75,7 +75,9 @@ Performance Monitoring than infrastructure monitoring. Its pricing is
 additionally billed per user seat and ingestion volume, rather than also by
 host. This means that for complex setups it can be cheaper.
 
-## Our requirements
+## Our Implementation
+
+### Requirements
 
 JMA Consulting is a very small company, which doesn't specialize in Kubernetes.
 As such, we had a set of requirements which was slightly different than many
@@ -91,7 +93,7 @@ other companies setting up observability. Our requirements were:
 - **Secure**. Our observability stack contains internal information about our
   infrastructure, so we do not want it to be compromised.
 
-## Our Decision: Signoz
+### Decision: Signoz
 
 For our requirements, we decided that Signoz was the right choice for us.
 Datadog and New Relic were too expensive. An LGTM or ELK stack introduced too
@@ -103,7 +105,7 @@ that we determined it would cost less overall than an enterprise solution
 because we don't expect to need to significantly scale its deployment, which
 might not be the case in other small companies, for example, at a startup.
 
-## Architecture
+### Architecture
 
 We deployed Signoz on our staging cluster, since we decided to only run two
 clusters (we felt we didn't have sizeable enough workloads to justify a third

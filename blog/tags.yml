@@ -8,7 +8,7 @@ observability:
   permalink: observability
   description: Posts about observability
 
-ci-cd:
-  label: CI/CD
-  permalink: ci-cd
-  description: Posts about CI/CD
+# ci-cd:
+#   label: CI/CD
+#   permalink: ci-cd
+#   description: Posts about CI/CD
