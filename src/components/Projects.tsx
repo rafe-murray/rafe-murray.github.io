@@ -5,11 +5,12 @@ import { card, h4, p, skillElementCommon } from "../styles";
 import { skillsMap } from "../constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getDarkModeIcon } from "../utils";
-import { SkillKey, Skill } from "../types";
+import { Skill, SkillKey } from "../types";
 import { arrayIntersection } from "../utils";
 import { useState } from "react";
 import { Chip } from "@mui/material";
 import ThemedIcon from "./Icon";
+import ProjectSkills from "./ProjectSkills";
 
 // TODO: move to own file
 function SkillChip({ skill, onClick }: { skill: Skill, onClick: (skillKey: SkillKey) => void }) {
@@ -19,13 +20,13 @@ function SkillChip({ skill, onClick }: { skill: Skill, onClick: (skillKey: Skill
     avatar={isSelected ? <DarkModeIcon /> : <ThemedIcon Icon={skill.icon} DarkIcon={skill.darkIcon} />
     }
     label={skill.title}
-    onClick={() => { onClick(skill.title); setIsSelected(prevState => !prevState) }}
+    onClick={() => { onClick(skill.key); setIsSelected(prevState => !prevState) }}
     sx={{
       m: 0.3,
       p: 0.5,
       color: "currentColor"
     }}
-    className={isSelected ? "tw:text-zinc-800! tw:bg-cyan-400!" : "tw:dark:bg-slate-800! tw:bg-slate-100!"}
+    className={isSelected ? "tw:text-zinc-800! tw:bg-cyan-400!" : "tw:dark:bg-zinc-800! tw:bg-slate-100!"}
   />
 }
 
@@ -41,9 +42,9 @@ export default function Projects() {
   }
 
   const skillChips = [...skillsMap.values()].map(skill => (
-    <SkillChip key={skill.title} skill={skill} onClick={toggleSkillSelected} />)
+    <SkillChip key={skill.key} skill={skill} onClick={toggleSkillSelected} />)
   );
-  const content = projects.filter(project => arrayIntersection(selectedSkills, project.skills).length > 0).map((project) => (
+  const content = Object.values(projects).filter(project => arrayIntersection(selectedSkills, project.skills).length > 0).map((project) => (
     <div className={card} key={project.header}>
       <h4 className={h4}>
         {project.header}
@@ -65,22 +66,7 @@ export default function Projects() {
         )}
       </h4>
       <p className={p}>{project.content}</p>
-      <div className="tw:flex tw:flex-row tw:flex-wrap tw:gap-6">
-        {project.skills.map((skill) => {
-          const skillObj = skillsMap.get(skill)!;
-          return (
-            <>
-              <SkillElement
-                key={skillObj.title}
-                title={skillObj.title}
-                Icon={skillObj.icon}
-                className={skillElementCommon}
-                DarkIcon={skillObj.darkIcon}
-              />
-            </>
-          );
-        })}
-      </div>
+      <ProjectSkills project={project} />
     </div>
   ));
 
