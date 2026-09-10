@@ -8,6 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-      - run: npm ci
-      - run: npm run deploy
+      - uses: pnpm/setup@v2
+      - run: pnpm run deploy
