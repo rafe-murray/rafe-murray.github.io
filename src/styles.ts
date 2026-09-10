@@ -1,5 +1,5 @@
 export const card =
-  "tw:rounded-md tw:border tw:border-gray-300 tw:dark:border-dark-800 tw:p-4 tw:mb-6 tw:shadow-sm tw:dark:bg-dark-950";
+  "tw:rounded-md tw:border tw:border-gray-300 tw:dark:border-zinc-700 tw:p-4 tw:mb-6 tw:shadow-sm tw:dark:bg-zinc-800";
 export const h1 =
   "tw:font-extrabold tw:text-5xl tw:pb-10 tw:text-zinc-900 tw:dark:text-gray-50 tw:font-heading";
 export const h2 =
