@@ -8,7 +8,7 @@ export const h3 =
   "tw:text-xl tw:font-semibold tw:text-zinc-800 tw:dark:text-gray-50 tw:pt-1 tw:pb-4";
 export const h4 =
   "tw:text-lg tw:font-semibold tw:text-zinc-800 tw:dark:text-gray-50 tw:pb-2";
-export const p = "tw:text-gray-600 tw:dark:text-gray-50 tw:pb-8";
+export const p = "tw:text-gray-600 tw:dark:text-gray-50 tw:pb-6";
 export const a =
   "tw:text-cyan-600 tw:dark:text-cyan-400 tw:hover:underline tw:hover:text-cyan-500 tw:dark:hover:text-cyan-600";
 export const td = p + " tw:border-0! tw:py-2";

@@ -1,9 +1,6 @@
-import FileDownload from './FileDownload';
 import profilePicture from '../assets/rafe-murray.jpg';
 import Button from './Button';
 import { h1, p } from '../styles';
-import resume from "../assets/rafe_murray_resume.pdf";
-import transcript from "../assets/rafe_murray_transcript.pdf";
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
@@ -24,8 +21,6 @@ export default function About() {
             Jazz pieces), and running/going to the gym.
           </p>
           <div className="tw:items-center tw:flex tw:pb-8">
-            <FileDownload href={resume} title="View my resume" content="My Resume" />
-            <FileDownload href={transcript} title="View my transcript" className='tw:mx-2' content="My Transcript" />
             <Button
               target="_blank"
               title="See my projects on Github"
