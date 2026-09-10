@@ -10,6 +10,12 @@
 @import "tailwindcss/utilities.css" layer(utilities) prefix(tw);
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
+@theme {
+  --color-dark-950: #181a1f;
+  --color-dark-800: #23272f;
+  --color-black: #0f1113;
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: var(--tw-color-cyan-600);
