@@ -6,37 +6,40 @@ export type SVG = React.ComponentType<
   }
 >;
 
-export type SkillKey =
-  | "Angular"
-  | "Bash"
-  | "C"
-  | "C++"
-  | "CMake"
-  | "CSS"
-  | "Docker"
-  | "Git"
-  | "GitHub"
-  | "GitLab"
-  | "Go"
-  | "HTML"
-  | "Java"
-  | "JavaScript"
-  | "Kotlin"
-  | "MatLab"
-  | "MongoDB"
-  | "MySQL"
-  | "PHP"
-  | "PostgreSQL"
-  | "ProtoBuf"
-  | "Python"
-  | "React"
-  | "SystemVerilog"
-  | "Tailwind CSS"
-  | "TypeScript"
-  | "Verilog";
+export const SkillKey = {
+  Angular: "Angular",
+  Bash: "Bash",
+  C: "C",
+  Cpp: "Cpp",
+  CMake: "CMake",
+  Docker: "Docker",
+  GitHub: "GitHub",
+  GitLab: "GitLab",
+  Go: "Go",
+  Helm: "helm",
+  Java: "Java",
+  JavaScript: "JavaScript",
+  Kotlin: "Kotlin",
+  Kubernetes: "kubernetes",
+  MatLab: "MatLab",
+  MongoDB: "MongoDB",
+  MySQL: "MySQL",
+  PHP: "PHP",
+  PostgreSQL: "PostgreSQL",
+  ProtoBuf: "ProtoBuf",
+  Python: "Python",
+  React: "React",
+  SystemVerilog: "SystemVerilog",
+  TailwindCSS: "TailwindCSS",
+  TypeScript: "TypeScript",
+  Verilog: "Verilog",
+} as const;
+
+export type SkillKey = (typeof SkillKey)[keyof typeof SkillKey];
 
 export interface Skill {
-  title: SkillKey;
+  key: SkillKey;
+  title: string;
   icon: SVG;
   darkIcon?: SVG;
 }
