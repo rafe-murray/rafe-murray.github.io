@@ -1,7 +1,7 @@
 ---
 title: Setting up Observability for Kubernetes
 authors: rafe
-date: 2026-09-03 17:14
+date: 2026-09-10 16:40
 tags: [k8s, observability]
 ---
 
