@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { useLocation } from "@docusaurus/router";
 
 export const useCustomScroll = () => {
   const location = useLocation();
@@ -9,13 +9,13 @@ export const useCustomScroll = () => {
     if (location.hash) {
       const element = document.querySelector(location.hash);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      const element = document.querySelector('#root');
+      const element = document.querySelector("#root");
       if (element) {
-        element.scrollIntoView({ behavior: 'auto' });
-        console.log('Scrolled to top!');
+        element.scrollIntoView({ behavior: "auto" });
+        console.log("Scrolled to top!");
       }
     }
   }, [location.hash]);

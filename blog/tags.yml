@@ -1,0 +1,14 @@
+k8s:
+  label: Kubernetes
+  permalink: /k8s
+  description: Posts about Kubernetes
+
+observability:
+  label: Observability
+  permalink: observability
+  description: Posts about observability
+
+# ci-cd:
+#   label: CI/CD
+#   permalink: ci-cd
+#   description: Posts about CI/CD

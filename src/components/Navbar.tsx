@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ThemeSwitcher from './ThemeSwitcher';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { HashLink } from 'react-router-hash-link';
 import { NavBarItem } from '../types';
 

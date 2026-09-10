@@ -1,9 +1,9 @@
-export default function FileDownload({href, title, className, content}: {href: string, title: string, className?: string, content: string}) {
+export default function FileDownload({ href, title, className, content }: { href: string, title: string, className?: string, content: string }) {
   return (
     <a
       href={href}
       title={title}
-      className={"bg-zinc-800 dark:bg-gray-100 text-white dark:text-black p-3 rounded-md font-bold text-lg hover:scale-105 " + className}
+      className={"tw:bg-zinc-800 tw:dark:bg-gray-100 tw:text-white tw:dark:text-black tw:p-3 tw:rounded-md tw:font-bold tw:text-lg tw:hover:scale-105 " + className}
       target="_blank" rel="noreferrer"
     >
       {content}

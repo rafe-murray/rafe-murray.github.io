@@ -1,0 +1,43 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+
+@layer theme;
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+@import "tailwindcss/utilities.css" layer(utilities) prefix(tw);
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  --color-dark-950: #181a1f;
+  --color-dark-800: #23272f;
+  --color-black: #0f1113;
+}
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: var(--tw-color-cyan-600);
+  --ifm-color-primary-dark: var(--tw-color-cyan-700);
+  --ifm-color-primary-darker: var(--tw-color-cyan-800);
+  --ifm-color-primary-darkest: var(--tw-color-cyan-900);
+  --ifm-color-primary-light: var(--tw-color-cyan-500);
+  --ifm-color-primary-lighter: var(--tw-color-cyan-400);
+  --ifm-color-primary-lightest: var(--tw-color-cyan-200);
+  --ifm-code-font-size: 95%;
+  --ifm-heading-font-family: 'Maven Pro', sans-serif;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: var(--tw-color-cyan-500);
+  --ifm-color-primary-dark: var(--tw-color-cyan-600);
+  --ifm-color-primary-darker: var(--tw-color-cyan-700);
+  --ifm-color-primary-darkest: var(--tw-color-cyan-800);
+  --ifm-color-primary-light: var(--tw-color-cyan-400);
+  --ifm-color-primary-lighter: var(--tw-color-cyan-300);
+  --ifm-color-primary-lightest: var(--tw-color-cyan-200);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}

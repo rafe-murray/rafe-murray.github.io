@@ -1,22 +1,39 @@
 import Section from "./Section";
 import SkillElement from "./Skill";
 import { projects } from "../constants";
-import { card, h4, p } from "../styles";
+import { card, h4, p, skillElementCommon } from "../styles";
 import { skillsMap } from "../constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SkillKey, Skill } from "../types";
+import { getDarkModeIcon } from "../utils";
+import { Skill, SkillKey } from "../types";
 import { arrayIntersection } from "../utils";
 import { useState } from "react";
 import { Chip } from "@mui/material";
+import ThemedIcon from "./Icon";
+import ProjectSkills from "./ProjectSkills";
 
 // TODO: move to own file
-function SkillChip({ skill, onClick }: { skill: Skill, onClick: (skillKey: SkillKey) => void }) {
+function SkillChip({ skill, numUses, onClick }: { skill: Skill, numUses: number, onClick: (skillKey: SkillKey) => void }) {
   const [isSelected, setIsSelected] = useState(false);
+  const DarkModeIcon = getDarkModeIcon(skill);
   return <Chip
-    avatar={<skill.icon />}
-    label={skill.title}
-    onClick={() => { onClick(skill.title); setIsSelected(prevState => !prevState) }}
-    className={isSelected ? "!bg-cyan-400" : "bg-slate-100"}
+    avatar={isSelected ? <DarkModeIcon /> : <ThemedIcon Icon={skill.icon} DarkIcon={skill.darkIcon} />
+    }
+    label={<>
+      {skill.title}
+      <span className={'tw:inline-flex tw:justify-center tw:items-center tw:ml-1 tw:p-1 tw:w-6 tw:h-6 tw:rounded-full ' + (isSelected ? "tw:text-zinc-800 tw:bg-cyan-300" : "tw:bg-slate-200 tw:dark:bg-zinc-600")}>{numUses}</span>
+    </>}
+    onClick={() => { onClick(skill.key); setIsSelected(prevState => !prevState) }}
+    sx={{
+      m: 0.3,
+      p: 0.5,
+      color: "currentColor",
+      '& .MuiChip-label': {
+        // Reduce right padding since we already have padding on label text to show a circle
+        paddingRight: '4px'
+      }
+    }}
+    className={isSelected ? "tw:text-zinc-800! tw:bg-cyan-400!" : "tw:dark:bg-zinc-800! tw:bg-slate-100!"}
   />
 }
 
@@ -31,11 +48,19 @@ export default function Projects() {
     }
   }
 
-  const skillChips = [...skillsMap.values()].map(skill => (
-    <SkillChip key={skill.title} skill={skill} onClick={toggleSkillSelected} />)
+  const projectsPerSkill = new Map<SkillKey, number>;
+  Object.values(projects).forEach(project => {
+    project.skills.forEach(skillKey => {
+      projectsPerSkill.set(skillKey, (projectsPerSkill.get(skillKey) || 0) + 1);
+    })
+  });
+  const skillChips = [...skillsMap.values()].sort(
+    (a, b) => (projectsPerSkill.get(b.key) || 0) - (projectsPerSkill.get(a.key) || 0)
+  ).map(skill => (
+    <SkillChip key={skill.key} skill={skill} numUses={projectsPerSkill.get(skill.key) || 0} onClick={toggleSkillSelected} />)
   );
-  const content = projects.filter(project => arrayIntersection(selectedSkills, project.skills).length > 0).map((project) => (
-    <div className={card}>
+  const content = Object.values(projects).filter(project => arrayIntersection(selectedSkills, project.skills).length > 0).map((project) => (
+    <div className={card} key={project.header}>
       <h4 className={h4}>
         {project.header}
         {project.github ? (
@@ -44,50 +69,25 @@ export default function Projects() {
             target="_blank"
             rel="noreferrer"
             title="View GitHub repo"
-            className="pl-6 text-2xl"
+            className="tw:pl-6 tw:text-2xl"
           >
             <FontAwesomeIcon
-              icon="fa-brands fa-github"
-              className="hover:scale-105"
+              icon={["fab", "github"]}
+              className="tw:hover:scale-105"
             />
           </a>
         ) : (
           ""
         )}
       </h4>
-      <p className={p + " pb-16"}>{project.content}</p>
-      <div className="flex flex-row flex-wrap gap-6">
-        {project.skills.map((skill) => {
-          const skillObj = skillsMap.get(skill)!;
-          return (
-            <>
-              <SkillElement
-                title={skillObj.title}
-                Icon={skillObj.icon}
-                className={
-                  (skillObj.darkIcon ? "flex dark:hidden " : "") +
-                  "size-12 aspect-square"
-                }
-              />
-              {skillObj.darkIcon ? (
-                <SkillElement
-                  title={skillObj.title}
-                  Icon={skillObj.darkIcon}
-                  className="hidden dark:flex size-12 aspect-square"
-                />
-              ) : (
-                ""
-              )}
-            </>
-          );
-        })}
-      </div>
+      <p className={p}>{project.content}</p>
+      <ProjectSkills project={project} />
     </div>
   ));
 
   return <Section header="Projects" content={<>
     <p className={p}>Toggle one or more icons to see all associated projects</p>
-    <div className="py-4">
+    <div className="tw:pb-4">
       {skillChips}
     </div>
     {content}
