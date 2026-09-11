@@ -39,7 +39,7 @@
     "@docusaurus/types": "3.10.2",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/react": "^19.0.0",
-    "postcss": "^8.5.26",
+    "postcss": "^8.5.28",
     "tailwindcss": "^4.3.3",
     "typescript": "~6.0.2"
   },
